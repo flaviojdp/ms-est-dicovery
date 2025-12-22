@@ -1,0 +1,17 @@
+services:
+  api-est-discovery:
+    container_name: api-est-discovery
+    build: .
+    image: api-est-discovery:0.0.1
+    ports:
+      - "9001:9001"
+    restart: always
+    networks:
+      - redediscovery
+      - redekeycloak
+
+networks:
+  redediscovery:
+    external: true
+  redekeycloak:
+    external: true
